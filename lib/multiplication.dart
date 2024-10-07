@@ -31,6 +31,9 @@ class _MultiplicationTableState extends State<MultiplicationTable> {
                   multiplication.add('$n * $i is $product');
                 }
                 print(multiplication);
+                setState(() {
+                  
+                });
               },
               child: Container(
                 height: 50,
