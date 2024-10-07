@@ -35,7 +35,7 @@ class _MultiplicationTableState extends State<MultiplicationTable> {
                 width: 150,
                 color: Colors.blue,
                 child: const Text(
-                  "Submit",
+                  "Submit date",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
