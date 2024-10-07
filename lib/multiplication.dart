@@ -11,6 +11,7 @@ class _MultiplicationTableState extends State<MultiplicationTable> {
   TextEditingController textEditingController = TextEditingController();
   int n = 1;
   int product = 1;
+  List<String> multiplication = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,16 +27,17 @@ class _MultiplicationTableState extends State<MultiplicationTable> {
               onTap: () {
                 n = int.parse(textEditingController.text);
                 for (int i = 1; i < 10; i++) {
-                  product =n*i;
-                  print("$n * $i is $product");
+                  product = n * i;
+                  multiplication.add('$n * $i is $product');
                 }
+                print(multiplication);
               },
               child: Container(
                 height: 50,
                 width: 150,
                 color: Colors.blue,
                 child: const Text(
-                  "Submit date",
+                  "Submit",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
@@ -43,9 +45,20 @@ class _MultiplicationTableState extends State<MultiplicationTable> {
                   ),
                 ),
               ),
-            )
+            ),
+  
+            Expanded(
+              child: ListView.builder(
+                itemCount: multiplication.length,
+                itemBuilder:(BuildContext context,int index) {
+                  return Text(multiplication[index]);
+            
+            
+                } ),
+            )                  
           ],
         ),
+        
       ),
     );
   }
